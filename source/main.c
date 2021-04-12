@@ -37,12 +37,11 @@ int main(void) {
 	weight = tempA + tempB + tempC;
 	diff1 = tempA - tempC;
 	diff2 = tempC - tempA;
-
+	if (weight > 140) {
+	tempD = tempD | 0x01;
+}
 	if (((diff1 > 80) || (diff2 > 80)) && (weight > 140) ) {
 	tempD = tempD | 0x03;	
-}
-	else if (weight > 140) {
-	tempD = tempD | 0x01;
 }
 	else if (((diff1 > 80) || (diff2 > 80)) && (weight < 140)) {
 	tempD = tempD | 0x02;
