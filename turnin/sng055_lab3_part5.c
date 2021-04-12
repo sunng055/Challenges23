@@ -19,9 +19,13 @@ int main(void) {
 	PORTB = 0x00;
 	PORTD = 0x00;
 	unsigned long weight = 0x00;
+	unsigned char tempB = 0x00;
+	unsigned long tempD = 0x00;
     /* Insert your solution below */
     while (1) {
-	weight = PIND + PINB;
+	tempB = PINB & 0x01;
+	tempD = PIND << 1;
+	weight = tempD + tempB;
 	if (weight > 70 && weight > 5 ) {
 	PORTB = 0x04;	
 }
