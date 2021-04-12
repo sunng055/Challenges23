@@ -25,7 +25,7 @@ int main(void) {
     while (1) {
 	tempB = PINB & 0x01;
 	tempD = PIND << 1;
-	weight = tempD + tempB;
+	weight = tempD | tempB;
 	if (weight > 70 && weight > 5 ) {
 	PORTB = 0x04;	
 }
