@@ -14,27 +14,39 @@
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-	DDRB = 0xFE;
-	DDRD = 0x00;
-	PORTB = 0x00;
+	DDRA = 0x00;
+	DDRB = 0x00;
+	DDRC = 0x00;
+	DDRD = 0xFF;
+	PORTA = 0xFF;
+	PORTB = 0xFF;
+	PORTC = 0xFF;
 	PORTD = 0x00;
-	unsigned long weight = 0x00;
-	unsigned long tempB = 0x00;
-	unsigned long tempD = 0x00;
+	unsigned char weight = 0x00;
+	unsigned char tempA = 0x00;
+	unsigned char tempB = 0x00;
+	unsigned char tempC = 0x00;
+	unsigned char tempD = 0x00;
+	unsigned char diff1 = 0x00;
+	unsigned char diff2 = 0x00;
     /* Insert your solution below */
     while (1) {
-	tempB = PINB & 0x01;
-	tempD = PIND;
-	weight = (tempD << 1) | tempB;
-	if (weight < 70 && weight > 5 ) {
-	PORTB = 0x04;	
+	tempA = PINA;
+	tempB = PINB
+	tempC = PINC;
+	weight = tempA + tempB + tempC;
+	diff1 = tempA - tempC;
+	diff2 = tempC - tempA;
+	if (weight > 140) {
+	tempD = tempD | 0x01;
 }
-	if (weight >= 70) {
-	PORTB = 0x02;
+	if ((diff1 > 80) || (diff2 > 80)) {
+	tempD = tempD | 0x02;	
 }
-	if (weight <= 5) {
-	PORTB = 0x00;
-}  	
+	weight = (weight >> 2);
+	weight = (weight & 0xFC);
+	tempD = tempD | weight;
+	PORTD = tempD;  	
     }
     return 1;
 }
