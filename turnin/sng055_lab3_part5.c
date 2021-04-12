@@ -24,9 +24,9 @@ int main(void) {
     /* Insert your solution below */
     while (1) {
 	tempB = PINB & 0x01;
-	tempD = PIND << 1;
-	weight = tempD | tempB;
-	if (weight > 70 && weight > 5 ) {
+	tempD = PIND;
+	weight = (tempD << 1) | tempB;
+	if (weight < 70 && weight > 5 ) {
 	PORTB = 0x04;	
 }
 	if (weight >= 70) {
