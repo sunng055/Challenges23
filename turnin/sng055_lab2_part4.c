@@ -44,6 +44,9 @@ int main(void) {
 	else if (weight > 140) {
 	tempD = tempD | 0x01;
 }
+	else if ((diff1 > 80) || (diff2 > 80)) {
+	tempD = tempD | 0x02;
+}
 	else {
 	tempD = 0x00;
 }
