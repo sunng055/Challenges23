@@ -32,7 +32,7 @@ int main(void) {
     /* Insert your solution below */
     while (1) {
 	tempA = PINA;
-	tempB = PINB
+	tempB = PINB;
 	tempC = PINC;
 	weight = tempA + tempB + tempC;
 	diff1 = tempA - tempC;
