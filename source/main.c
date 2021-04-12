@@ -1,8 +1,8 @@
 /*	Author: sng055
  *  Partner(s) Name: Sunny Ng
  *	Lab Section:
- *	Assignment: Lab #3  Exercise #5
- *	Exercise Description: [optional - include for your own benefit]
+ *	Assignment: Lab #2  Exercise #4
+ *	*	Exercise Description: [optional - include for your own benefit]
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
@@ -37,11 +37,15 @@ int main(void) {
 	weight = tempA + tempB + tempC;
 	diff1 = tempA - tempC;
 	diff2 = tempC - tempA;
-	if (weight > 140) {
+
+	if (((diff1 > 80) || (diff2 > 80)) && (weight > 140) ) {
+	tempD = tempD | 0x03;	
+}
+	else if (weight > 140) {
 	tempD = tempD | 0x01;
 }
-	if ((diff1 > 80) || (diff2 > 80)) {
-	tempD = tempD | 0x02;	
+	else {
+	tempD = 0x00;
 }
 	weight = (weight >> 2);
 	weight = (weight & 0xFC);
