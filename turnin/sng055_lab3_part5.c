@@ -19,7 +19,7 @@ int main(void) {
 	PORTB = 0x00;
 	PORTD = 0x00;
 	unsigned long weight = 0x00;
-	unsigned char tempB = 0x00;
+	unsigned long tempB = 0x00;
 	unsigned long tempD = 0x00;
     /* Insert your solution below */
     while (1) {
